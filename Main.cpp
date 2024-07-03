@@ -8,7 +8,7 @@ int main()
 {
     Model model;
     ObjLoader loader;
-    model = loader.LoadFromFile("C:/Users/letsd/OneDrive/Documents/Untitled.obj");
+    model = loader.LoadFromFile("C:/Users/letsd/OneDrive/Documents/untitled.obj");
 
     std::cout << "Vertices: " << std::endl;
     for(auto& v: model.Vertices)
@@ -29,8 +29,10 @@ int main()
     }
 
     std::cout << "VertexIndices: " << std::endl;
-    for (auto& v : model.VertexIndices)
+
+    for (int i = 0; i < model.VertexIndices.size() - 2; i+= 3)
     {
-        std::cout << v << std::endl;
+        std::cout << model.VertexIndices[i] << " " << model.VertexIndices[i+1] << " " << model.VertexIndices[i+2] << std::endl;
     }
+    std::cout << "VertexIndicesSize: " << model.VertexIndices.size() << std::endl;
 }
